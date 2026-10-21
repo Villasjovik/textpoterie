@@ -595,6 +595,15 @@ background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:
 .price-ribbon.kamp{background:#b8472f;color:#f2ede4}
 @media(max-width:980px){.price-grid.three{grid-template-columns:minmax(0,1fr);perspective:none;max-width:none}.price-grid.three>.pkg-col,.price-grid.three>.pkg-col:first-child,.price-grid.three>.pkg-col:last-child{--pb-rot:0deg;--pb-base-y:0px;--pb-scale:1;transform:none!important}}
 
+/* Three active packages; content has no paid-reach handle. */
+#sec-pr .pr-inner{max-width:1160px}
+@media(min-width:981px){
+  .price-grid.three>.pkg-col[data-pkg-col="content"]{padding-top:84px}
+  .price-grid.three .price-box{padding:44px 26px 36px}
+  .price-grid.three .price-plate{padding:22px 18px}
+  .price-grid.three .price-ribbon{font-size:9px;letter-spacing:.16em;padding:7px 12px}
+}
+
 /* === PKG-COL — wraps green handle (pkg-boost) + price-box as one tilted stack ===
    Reading-mode physics: cards stay alive (float never stops) but FLATTEN toward the
    reader — on hover (0deg) and on scroll-approach (--pr-damp scrubbed 1→.55). */
@@ -1518,11 +1527,34 @@ position:relative;overflow:hidden;transition:color .35s}
   <div class="pr-orb pr-orb-2" aria-hidden="true"></div>
   <div class="pr-inner">
     <p class="sec-lbl rv">Collaboration overview</p>
-    <h2 class="sec-h2 ws rv" lang="en">Two ways to build <em class="pi-reach">story and reach.</em></h2>
+    <h2 class="sec-h2 ws rv" lang="en">Three ways to build <em class="pi-reach">content and reach.</em></h2>
 
-    <div class="price-grid">
+    <div class="price-grid three">
 
-      <div class="pkg-col rv d1" data-pkg-col="start">
+      <!-- Content Package: image production for Textpoterie's own channels -->
+      <div class="pkg-col featured rv d1" data-pkg-col="content">
+        <div class="price-box featured rv" data-pkg-box="content">
+          <i class="pr-sheen" aria-hidden="true"></i>
+          <i class="pr-bg" data-n="01" aria-hidden="true"></i>
+          <span class="price-ribbon">Recommended &middot; BEST VALUE</span>
+          <h3 class="price-title">Content Package</h3>
+          <p class="price-sub">20 images &middot; styling and photography &middot; permanent rights</p>
+          <div class="price-plate">
+            <p class="price-total-lbl">Production fee</p>
+            <p class="price-total" data-base="1200">1,200</p>
+            <span class="price-unit">EUR</span>
+          </div>
+          <div class="price-includes">
+            <p class="pi hi"><span>20 product and lifestyle images of Textpoterie's porcelain</span></p>
+            <p class="pi hi"><span>Styled and photographed in an authentic home setting</span></p>
+            <p class="pi hi"><span>For your own channels, website and paid advertising</span></p>
+            <p class="pi"><span>Textpoterie owns all delivered images with permanent usage rights and no time limit</span></p>
+            <p class="pi"><span>Styling, photography and editing included</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pkg-col rv d2" data-pkg-col="start">
         <div class="pkg-boost" role="group" aria-pressed="false" data-pkg="start">
           <button type="button" class="pkg-boost-head" aria-pressed="false" aria-controls="pkg-boost-body-start" aria-label="Activate Meta reach for Video Pack">
             <span class="pkg-boost-switch" aria-hidden="true"></span>
@@ -1549,7 +1581,7 @@ position:relative;overflow:hidden;transition:color .35s}
           </div>
         </div>
         <div class="price-box rv" data-pkg-box="start">
-          <i class="pr-bg" data-n="01" aria-hidden="true"></i>
+          <i class="pr-bg" data-n="02" aria-hidden="true"></i>
           <h3 class="price-title">Video Pack</h3>
           <p class="price-sub">1 video &middot; 2 stories with CTA &middot; 10 lifestyle images</p>
           <div class="price-plate">
@@ -1568,8 +1600,8 @@ position:relative;overflow:hidden;transition:color .35s}
         </div>
       </div>
 
-      <!-- Kampanjpaket (featured) -->
-      <div class="pkg-col featured rv d2" data-pkg-col="season">
+      <!-- Campaign Package -->
+      <div class="pkg-col rv d3" data-pkg-col="season">
         <div class="pkg-boost" role="group" aria-pressed="false" data-pkg="season">
           <button type="button" class="pkg-boost-head" aria-pressed="false" aria-controls="pkg-boost-body-season" aria-label="Activate Meta reach for Campaign Package">
             <span class="pkg-boost-switch" aria-hidden="true"></span>
@@ -1595,10 +1627,8 @@ position:relative;overflow:hidden;transition:color .35s}
             </div>
           </div>
         </div>
-        <div class="price-box featured rv" data-pkg-box="season">
-          <i class="pr-sheen" aria-hidden="true"></i>
-          <i class="pr-bg" data-n="02" aria-hidden="true"></i>
-          <span class="price-ribbon">Recommended &middot; BEST VALUE</span>
+        <div class="price-box rv" data-pkg-box="season">
+          <i class="pr-bg" data-n="03" aria-hidden="true"></i>
           <h3 class="price-title">Campaign Package</h3>
           <p class="price-sub">3 videos &middot; 6 stories with CTA &middot; 60 lifestyle images</p>
           <div class="price-plate">
